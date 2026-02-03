@@ -1,0 +1,1893 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobelly Bordados - Mais de 7 anos de experiência</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* ===== VARIÁVEIS DE CORES ===== */
+        :root {
+            --vermelho: #D32F2F;
+            --vermelho-escuro: #B71C1C;
+            --vermelho-claro: #FF5252;
+            --preto: #000000;
+            --preto-claro: #212121;
+            --branco: #FFFFFF;
+            --cinza-claro: #F5F5F5;
+            --cinza: #9E9E9E;
+            --sombra: rgba(0, 0, 0, 0.1);
+        }
+        
+        /* ===== RESET E ESTILOS GERAIS ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--preto-claro);
+            background-color: var(--branco);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--preto);
+            display: inline-block;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--vermelho);
+            border-radius: 2px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+        
+        .btn-vermelho {
+            background-color: var(--vermelho);
+            color: var(--branco);
+        }
+        
+        .btn-vermelho:hover {
+            background-color: var(--vermelho-escuro);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(211, 47, 47, 0.2);
+        }
+        
+        .btn-preto {
+            background-color: var(--preto);
+            color: var(--branco);
+        }
+        
+        .btn-preto:hover {
+            background-color: var(--preto-claro);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--vermelho);
+            border: 2px solid var(--vermelho);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--vermelho);
+            color: var(--branco);
+        }
+        
+        /* ===== HEADER E NAVEGAÇÃO (ALTERADO: FUNDO PRETO, LETRAS BRANCAS) ===== */
+        header {
+            background-color: var(--preto); /* FUNDO PRETO */
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 10px 0;
+            background-color: var(--preto); /* Mantém preto mesmo no scroll */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            height: 60px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-img.scrolled {
+            height: 50px;
+        }
+        
+        /* MENU DE NAVEGAÇÃO COM NOVAS CORES: FUNDO PRETO, TEXTO BRANCO */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--branco); /* LETRAS BRANCAS */
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        /* Hover para os itens do menu - vermelho */
+        nav a:hover {
+            background-color: var(--vermelho);
+            color: var(--branco);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background-color: var(--vermelho);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 80%;
+        }
+        
+        nav a.active {
+            background-color: var(--vermelho);
+            color: var(--branco);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--branco); /* Ícone branco */
+            cursor: pointer;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1618354691792-d1d42acfd860?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--branco);
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--vermelho);
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-highlight {
+            color: var(--vermelho-claro);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero-highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: rgba(255, 82, 82, 0.2);
+            z-index: -1;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--vermelho-claro);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--cinza);
+            font-weight: 500;
+        }
+        
+        /* ===== QUEM SOMOS SECTION ===== */
+        .about {
+            background-color: var(--cinza-claro);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--preto);
+        }
+        
+        .about-text h2 span {
+            color: var(--vermelho);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--preto-claro);
+        }
+        
+        .about-features {
+            margin-top: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--vermelho);
+            color: var(--branco);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .feature-text h4 {
+            margin-bottom: 5px;
+            color: var(--preto);
+        }
+        
+        .about-image {
+            position: relative;
+        }
+        
+        .about-img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover .about-img {
+            transform: scale(1.03);
+        }
+        
+        .experience-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background-color: var(--vermelho);
+            color: var(--branco);
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(211, 47, 47, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .experience-years {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        .experience-text {
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+        
+        /* ===== SERVIÇOS SECTION (BORDADOS PROMOCIONAIS COM CORES VERMELHO/PRETO/BRANCO) ===== */
+        .services {
+            background-color: var(--branco);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--branco);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            border-top: 4px solid var(--vermelho);
+        }
+        
+        /* Card específico para Bordados Promocionais com cor VERMELHA */
+        .service-card.promocional {
+            border-top: 4px solid var(--vermelho);
+            background-color: var(--preto); /* FUNDO PRETO */
+            color: var(--branco); /* TEXTO BRANCO */
+        }
+        
+        .service-card.promocional .service-icon {
+            background-color: rgba(211, 47, 47, 0.2);
+            color: var(--branco); /* ÍCONE BRANCO */
+        }
+        
+        .service-card.promocional h3 {
+            color: var(--branco); /* TÍTULO BRANCO */
+        }
+        
+        .service-card.promocional p {
+            color: var(--cinza-claro); /* TEXTO CINZA CLARO */
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-header {
+            padding: 25px 25px 15px;
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(211, 47, 47, 0.1);
+            color: var(--vermelho);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--preto);
+        }
+        
+        .service-body {
+            padding: 0 25px 25px;
+        }
+        
+        .service-body p {
+            color: var(--preto-claro);
+            margin-bottom: 20px;
+        }
+        
+        .service-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .service-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--preto-claro);
+        }
+        
+        .service-list li i {
+            color: var(--vermelho);
+            font-size: 0.9rem;
+        }
+        
+        .service-card.promocional .service-list li {
+            color: var(--cinza-claro); /* TEXTO CINZA CLARO PARA LISTA */
+        }
+        
+        .service-card.promocional .service-list li i {
+            color: var(--branco); /* ÍCONES BRANCOS */
+        }
+        
+        /* ===== ORÇAMENTO SECTION ===== */
+        .budget {
+            background-color: var(--preto);
+            color: var(--branco);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .budget::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--vermelho);
+        }
+        
+        .budget .section-title h2 {
+            color: var(--branco);
+        }
+        
+        .budget-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .budget-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--branco);
+        }
+        
+        .budget-text p {
+            margin-bottom: 30px;
+            color: var(--cinza);
+        }
+        
+        .budget-features {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .budget-feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .budget-feature i {
+            color: var(--vermelho);
+            font-size: 1.2rem;
+        }
+        
+        .budget-form {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--branco);
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--branco);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--vermelho);
+        }
+        
+        input::placeholder, textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background-color: var(--vermelho);
+            color: var(--branco);
+            border: none;
+            padding: 16px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: var(--vermelho-escuro);
+        }
+        
+        /* ===== PORTFÓLIO SECTION ===== */
+        .portfolio {
+            background-color: var(--cinza-claro);
+        }
+        
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 25px;
+            background-color: var(--branco);
+            color: var(--preto);
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--vermelho);
+            color: var(--branco);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: var(--branco); /* Fundo branco para os itens do portfólio */
+        }
+        
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Alterado de 'cover' para 'contain' para mostrar a imagem completa */
+            transition: transform 0.5s ease;
+            background-color: var(--branco); /* Fundo branco para as áreas não preenchidas */
+            padding: 20px; /* Espaçamento interno para as imagens */
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.05); /* Reduzido de 1.1 para 1.05 para evitar cortes */
+        }
+        
+        .portfolio-overlay h4 {
+            color: var(--branco);
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        
+        .portfolio-overlay p {
+            color: var(--cinza);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        /* ===== CONTATO SECTION (FORMULÁRIO "ENVIE SUA MENSAGEM" COM FUNDO PRETO) ===== */
+        .contact {
+            background-color: var(--branco);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(211, 47, 47, 0.1);
+            color: var(--vermelho);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h4 {
+            margin-bottom: 5px;
+            color: var(--preto);
+        }
+        
+        .contact-text p, .contact-text a {
+            color: var(--preto-claro);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-text a:hover {
+            color: var(--vermelho);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--preto);
+            color: var(--branco);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--vermelho);
+            transform: translateY(-3px);
+        }
+        
+        /* FORMULÁRIO DE CONTATO COM FUNDO PRETO E TEXTO BRANCO */
+        .contact-form {
+            background-color: var(--preto); /* FUNDO PRETO */
+            padding: 40px;
+            border-radius: 10px;
+            color: var(--branco); /* TEXTO BRANCO */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--branco); /* TÍTULO BRANCO */
+            text-align: center;
+        }
+        
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .contact-form label {
+            color: var(--branco); /* LABEL BRANCA */
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--branco); /* TEXTO DOS CAMPOS BRANCO */
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--vermelho);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* BOTÃO DO FORMULÁRIO VERMELHO */
+        .contact-form .btn {
+            background-color: var(--vermelho);
+            color: var(--branco);
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+        
+        .contact-form .btn:hover {
+            background-color: var(--vermelho-escuro);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(211, 47, 47, 0.3);
+        }
+        
+        /* ===== WHATSAPP FLUTUANTE ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: var(--branco);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            text-decoration: none;
+            transition: all 0.3s;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--preto);
+            color: var(--branco);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--branco);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--vermelho);
+        }
+        
+        .footer-column p {
+            color: var(--cinza);
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--cinza);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--vermelho);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--cinza);
+            font-size: 0.9rem;
+        }
+        
+        /* ===== ANIMAÇÕES ===== */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 992px) {
+            .about-content, .budget-container, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                flex-direction: column;
+                background-color: var(--preto);
+                padding: 30px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                transition: left 0.3s ease;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li a {
+                color: var(--branco);
+                display: block;
+                padding: 15px;
+                border-radius: 5px;
+            }
+            
+            nav ul li a:hover {
+                background-color: var(--vermelho);
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .budget-form, .contact-form {
+                padding: 25px;
+            }
+            
+            .experience-badge {
+                width: 120px;
+                height: 120px;
+                right: -10px;
+            }
+            
+            .experience-years {
+                font-size: 2rem;
+            }
+            
+            .logo-img {
+                height: 50px;
+            }
+            
+            .portfolio-img {
+                padding: 15px; /* Menos padding em telas menores */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header - MENU COM FUNDO PRETO E LETRAS BRANCAS -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#inicio" class="logo">
+                <img src="img2/logojobelly.png" alt="jobelly Bordados" class="logo-img" id="logoImg">
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="mainMenu">
+                    <li><a href="#inicio" class="active">Início</a></li>
+                    <li><a href="#quem-somos">Quem Somos</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#orcamento">Orçamento</a></li>
+                    <li><a href="#portfolio">Portfólio</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content animate-on-scroll">
+                <h1>A JOBELLY ESTÁ HÁ <span class="hero-highlight">MAIS DE 7 ANOS</span> OFERECENDO PRODUTOS E SERVIÇOS</h1>
+                <p>Com a experiência de quem sabe o que faz, entregamos bordados personalizados de alta qualidade para empresas, eventos e clientes individuais.</p>
+                <div class="hero-btns">
+                    <a href="#orcamento" class="btn btn-vermelho">Solicitar Orçamento</a>
+                    <a href="#portfolio" class="btn btn-outline">Ver Portfólio</a>
+                </div>
+                
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="7">0</div>
+                        <div class="stat-label">Anos de Experiência</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="500">0</div>
+                        <div class="stat-label">Clientes Satisfeitos</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="10000">0</div>
+                        <div class="stat-label">Peças Entregues</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quem Somos -->
+    <section class="about" id="quem-somos">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>QUEM <span>SOMOS</span></h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text animate-on-scroll">
+                    <h2>Jobelly Bordados: <span>Excelência em Cada Ponto</span></h2>
+                    <p>Somos uma empresa especializada em bordados personalizados e brindes promocionais, com mais de 7 anos de experiência no mercado. Trabalhamos com compromisso, qualidade e criatividade, oferecendo produtos como chaveiros, garrafas squeeze e outros brindes personalizados.</p>
+                    <p>Nosso objetivo é transformar ideias em realidade, criando soluções personalizadas que atendem às necessidades de cada cliente, valorizando marcas e tornando cada detalhe único.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Qualidade Garantida</h4>
+                                <p>Utilizamos materiais de primeira linha e técnicas avançadas para garantir durabilidade e perfeição em cada peça.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Criatividade e Inovação</h4>
+                                <p>Ajustamos e otimizamos os designs fornecidos pelos clientes para garantir a melhor qualidade no bordado.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Entrega no Prazo</h4>
+                                <p>Cumprimos rigorosamente os prazos estabelecidos, garantindo que sua encomenda chegue no tempo certo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contato" class="btn btn-vermelho">Entre em Contato</a>
+                </div>
+                
+                <div class="about-image animate-on-scroll">
+                    <img src="img/quemsomos.png" width="700" height="520px">
+
+                  <div class="experience-badge" style="position: absolute; bottom: -160px; right: 5px;">
+                  <div class="experience-years">7+</div>
+                    <div class="experience-text">Anos de Experiência</div>
+                 </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="services" id="servicos">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>NOSSOS <span>SERVIÇOS</span></h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll" style="grid-column: 1;">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h3>Bordados em Kimonos</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Personalizamos kimonos com bordados de alta qualidade, aplicando logotipos, nomes e identificações para academias, equipes e atletas. </p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Trançado </li>
+                            <li><i class="fas fa-check"></i> Tecido Ripstop</li>
+                            <li><i class="fas fa-check"></i> Tecido Lona </li>
+                            <li><i class="fas fa-check"></i> Tecido Brim </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- BORDADOS PROMOCIONAIS COM FUNDO PRETO E LETRAS BRANCAS -->
+                <div class="service-card promocional animate-on-scroll" style="grid-column: 2;">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h3>Bordados</h3>
+                    </div>
+                    <div class="service-body">
+                        <p> Trabalhamos com todos tipos de bordados em diverso tecidos, em bastante quantidade. </p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Bonés e Chapéus</li>
+                            <li><i class="fas fa-check"></i> Toalhas e Panos</li>
+                            <li><i class="fas fa-check"></i> Bolsas e Mochilas</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card animate-on-scroll" style="grid-column: 1;">
+                    <div class="service-header">s
+                        <div class="service-icon">
+                            <i class="fas fa-bottle-water"></i>
+                        </div>
+                        <h3>Brindes, Squeezes e Garrafas</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Criamos brindes, personalizacões de garrafas e chaveiros com Argola simples, Mosquetão, Argola + elo, split ring</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Garrafas</li>
+                            <li><i class="fas fa-check"></i> Squeezes</li>
+                            <li><i class="fas fa-check"></i> Chaveiros com diversos fechos </li>
+                            <li><i class="fas fa-check"></i> Brindes corporativos</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card promocional animate-on-scroll" style="grid-column: 2;">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <h3>Plaquetas Metálicas Personalizadas</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Personalizamos plaquetas metálicas em roupas e principalmente em mochilas</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Roupas</li>
+                            <li><i class="fas fa-check"></i> Mochila</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Orçamento -->
+    <section class="budget" id="orcamento">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>SOLICITE SEU <span>ORÇAMENTO</span></h2>
+            </div>
+            
+            <div class="budget-container">
+                <div class="budget-text animate-on-scroll">
+                    <h3>Orçamento Rápido e Personalizado</h3>
+                    <p>Envie suas especificações e receba um orçamento detalhado diretamente no seu WhatsApp em até 24 horas.</p>
+                    
+                    <div class="budget-features">
+                        <div class="budget-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Resposta em até 24 horas</span>
+                        </div>
+                        <div class="budget-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Orçamento detalhado e sem compromisso</span>
+                        </div>
+                        <div class="budget-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Atendimento personalizado</span>
+                        </div>
+                        <div class="budget-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Consultoria gratuita para seu projeto</span>
+                        </div>
+                    </div>
+                    
+                    <div class="budget-info">
+                        <p><i class="fas fa-phone-alt"></i> WhatsApp: (11) 94011-0722</p>
+                        <p><i class="fas fa-envelope"></i> E-mail: contato@jobelly.com.br</p>
+                    </div>
+                </div>
+                
+                <div class="budget-form animate-on-scroll">
+                    <form id="budgetForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nome Completo *</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefone/WhatsApp *</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Serviço de Interesse *</label>
+                            <select id="service" required>
+                                <option value="uniformes">Bordados</option>
+                                <option value="promocionais">Bordados em Kimonos</option>
+                                <option value="domesticos">Brindes, Squeezes e Garrafas</option>
+                                <option value="domesticos">Plaquetas Metálicas Personalizadas</option>
+                                <option value="domesticos">Chaveiros</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="description">Descreva seu Projeto *</label>
+                            <textarea id="description" rows="4" required placeholder="Informe quantidade, tipo de peça, cores, etc."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> ENVIAR ORÇAMENTO VIA WHATSAPP
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Portfólio -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <div class="section-title animate-on-scroll">
+            <h2>NOSSO <span>PORTFÓLIO</span></h2>
+        </div>
+        
+        <div class="portfolio-filter animate-on-scroll">
+            <button class="filter-btn active" data-filter="uniformes">Bordados em Kimono</button>
+            <button class="filter-btn" data-filter="promocionais">Bordados</button>
+            <button class="filter-btn" data-filter="domesticos">Chaveiros</button>
+            <button class="filter-btn" data-filter="especiais">Brindes Garrafas e Squeezes</button>
+            <button class="filter-btn" data-filter="placas">Plaquetas e Mochilas</button>
+        </div>
+        
+        <div class="portfolio-grid">
+            <!-- Bordadok1.jpeg - Aparece apenas em Bordados em Kimono -->
+            <div class="portfolio-item animate-on-scroll" data-category="uniformes">
+                <img src="img3/Bordadok1.jpeg" alt="Bordado em Kimono - KIHON REINO JIU JITSU" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h4>Bordados em Kimonos</h4>
+                    <p>KIHON - Reino Jiu Jitsu</p>
+                </div>
+            </div>
+            
+            <!-- Bordadok2.jpeg - Aparece apenas em Bordados em Kimono -->
+            <div class="portfolio-item animate-on-scroll" data-category="uniformes">
+                <img src="img3/Bordadok2.jpeg" alt="Bordado em Kimono - TEAM ALEX SILVA JUDO JIU JITSU" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h4>Bordados em Kimonos</h4>
+                    <p>Team Alex Silva - Judo e Jiu Jitsu</p>
+                </div>
+            </div>
+            
+            <!-- Bordadosk4.jpeg - Aparece apenas em Bordados em Kimono -->
+            <div class="portfolio-item animate-on-scroll" data-category="uniformes">
+                <img src="img3/Bordadosk4.jpeg" alt="Bordado em Kimono - ALLIANCE JIU JITSU TEAM 30 ANOS" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h4>Bordados em Kimonos</h4>
+                    <p>Alliance Jiu Jitsu Team - 30 anos desde 1993</p>
+                </div>
+            </div>
+            
+            <!-- Bordados1.jpeg - Aparece apenas em Bordados Promocionais -->
+            <div class="portfolio-item animate-on-scroll" data-category="promocionais" style="display: none;">
+                <img src="img3/Bordados1.jpeg" alt="Bordado - GRACIE BARRA CARLOS GRACIE JR." class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h4>Bordados Promocionais</h4>
+                    <p>Gracie Barra - Carlos Gracie Jr.</p>
+                </div>
+            </div>
+
+            <!-- Bordados1.jpeg - Aparece apenas em Bordados Promocionais -->
+            <div class="portfolio-item animate-on-scroll" data-category="promocionais" style="display: none;">
+                <img src="img3/Bordados2.jpeg" alt="Bordado - GRACIE BARRA CARLOS GRACIE JR." class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h4>Bordados Promocionais</h4>
+                </div>
+            </div>
+
+            <!-- Bordados1.jpeg - Aparece apenas em Bordados Promocionais -->
+            <div class="portfolio-item animate-on-scroll" data-category="promocionais" style="display: none;">
+                <img src="img3/Bordados3.jpeg" alt="Bordado - GRACIE BARRA CARLOS GRACIE JR." class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h4>Bordados Promocionais</h4>
+                    <p>Para o pet, o melhor da nutrição.</p>
+                </div>
+            </div>
+
+            <!-- Bordados1.jpeg - Aparece apenas em Bordados Promocionais -->
+            <div class="portfolio-item animate-on-scroll" data-category="promocionais" style="display: none;">
+                <img src="img3/Bordados4.jpeg" alt="Bordado - GRACIE BARRA CARLOS GRACIE JR." class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h4>Bordados Promocionais</h4>
+                    <p>Tradição em seguros.</p>
+                </div>
+            </div>
+            
+            <!-- Chaveiro4.jpeg - Aparece apenas em Chaveiros -->
+            <div class="portfolio-item animate-on-scroll" data-category="domesticos" style="display: none;">
+                <img src="Img3/Chaveiro4.jpeg" alt="Chaveiro Personalizado - Remove before flight, GOL, CONSTRUIR E CUIDAR" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h4>Chaveiros Personalizados</h4>
+                    <p>Chaveiro com múltiplas logos promocionais</p>
+                </div>
+            </div>
+
+            <!-- Chaveiro4.jpeg - Aparece apenas em Chaveiros -->
+            <div class="portfolio-item animate-on-scroll" data-category="domesticos" style="display: none;">
+                <img src="Img3/Chaveiro1.jpeg" alt="Chaveiro Personalizado - Remove before flight, GOL, CONSTRUIR E CUIDAR" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h4>Chaveiros Personalizados</h4>
+                    <p>Chaveiro com múltiplas logos promocionais</p>
+                </div>
+            </div>
+
+            <!-- Chaveiro4.jpeg - Aparece apenas em Chaveiros -->
+            <div class="portfolio-item animate-on-scroll" data-category="domesticos" style="display: none;">
+                <img src="Img3/Chaveiro2.jpeg" alt="Chaveiro Personalizado - Remove before flight, GOL, CONSTRUIR E CUIDAR" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h4>Chaveiros Personalizados</h4>
+                    <p>Chaveiro com múltiplas logos promocionais</p>
+                </div>
+            </div>
+
+            <!-- Chaveiro4.jpeg - Aparece apenas em Chaveiros -->
+            <div class="portfolio-item animate-on-scroll" data-category="domesticos" style="display: none;">
+                <img src="Img3/Chaveiro3.jpeg" alt="Chaveiro Personalizado - Remove before flight, GOL, CONSTRUIR E CUIDAR" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h4>Chaveiros Personalizados</h4>
+                    <p>Chaveiro com múltiplas logos promocionais</p>
+                </div>
+            </div>
+            
+            <!-- Placas1.jpeg - Aparece apenas em Plaquetas Mochilas -->
+            <div class="portfolio-item animate-on-scroll" data-category="placas" style="display: none;">
+                <img src="Img3/Placas1.jpeg" alt="Plaquetas Metálicas Personalizadas - JBS, Hypera Pharma, Univali, etc." class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h4>Plaquetas Metálicas</h4>
+                    <p>Plaquetas metálicas personalizadas para diversas marcas</p>
+                </div>
+            </div>
+
+            <!-- Placas1.jpeg - Aparece apenas em Plaquetas Mochilas -->
+            <div class="portfolio-item animate-on-scroll" data-category="placas" style="display: none;">
+                <img src="Img3/Mochila1.jpeg" alt="Plaquetas Metálicas Personalizadas - JBS, Hypera Pharma, Univali, etc." class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h4>Mochilas Personalizadas</h4>
+                    <p>Mochilas personalizadas com plaquetas metálicas</p>
+                </div>
+            </div>
+
+            <!-- Placas1.jpeg - Aparece apenas em Plaquetas Mochilas -->
+            <div class="portfolio-item animate-on-scroll" data-category="placas" style="display: none;">
+                <img src="Img3/Mochila2.jpeg" alt="Plaquetas Metálicas Personalizadas - JBS, Hypera Pharma, Univali, etc." class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h4>Mochilas Personalizadas</h4>
+                    <p>Mochilas personalizadas com plaquetas metálicas</p>
+                </div>
+            </div>
+
+            <!-- Garrafas1.jpg - Aparece apenas em Brindes Garrafas e Squeezes -->
+            <div class="portfolio-item animate-on-scroll" data-category="especiais" style="display: none;">
+                <img src="Img3/Garrafas1.jpeg" alt="Garrafas Personalizadas" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h4>Garrafas Squeezes</h4>
+                    <p>Garrafas personalizadas</p>
+                </div>
+            </div>
+
+            <!-- Garrafas1.jpg - Aparece apenas em Brindes Garrafas e Squeezes -->
+            <div class="portfolio-item animate-on-scroll" data-category="especiais" style="display: none;">
+                <img src="Img3/Garrafas2.jpeg" alt="Garrafas Personalizadas" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h4>Garrafas Squeezes</h4>
+                    <p>Garrafas personalizadas</p>
+                </div>
+            </div>
+
+            <!-- Garrafas1.jpg - Aparece apenas em Brindes Garrafas e Squeezes -->
+            <div class="portfolio-item animate-on-scroll" data-category="especiais" style="display: none;">
+                <img src="img3/Garrafas3.jpeg" alt="Garrafas Personalizadas" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h4>Garrafas Squeezes</h4>
+                    <p>Garrafas personalizadas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contato -->
+    <section class="contact" id="contato">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>ENTRE EM <span>CONTATO</span></h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info animate-on-scroll">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Localização</h4>
+                            <p>São Paulo - SP</p>
+                            <p>Atendemos em toda Grande São Paulo</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Telefone / WhatsApp</h4>
+                            <p>(11) 94011-0722</p>
+                            <a href="https://wa.me/5511940110722">Enviar mensagem no WhatsApp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>E-mail</h4>
+                            <p>contato@jobelly.com.br</p>
+                            <p>comercial@jobelly.com.br</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Horário de Atendimento</h4>
+                            <p>Segunda a Sexta: 8h às 18h</p>
+                            <p>Sábado: 8h às 12h</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Redes Sociais</h4>
+                            <p>Siga-nos nas redes sociais</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FORMULÁRIO "ENVIE SUA MENSAGEM" COM FUNDO PRETO E TEXTO BRANCO -->
+                <div class="contact-form animate-on-scroll">
+                    <h3>Envie sua Mensagem</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Nome Completo *</label>
+                            <input type="text" id="contactName" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactPhone">Telefone *</label>
+                                <input type="tel" id="contactPhone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">E-mail *</label>
+                                <input type="email" id="contactEmail" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactSubject">Assunto *</label>
+                            <input type="text" id="contactSubject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMessage">Mensagem *</label>
+                            <textarea id="contactMessage" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/5511940110722" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Jobelly Bordados</h3>
+                    <p>Especialistas em bordados personalizados há mais de 7 anos. Qualidade, criatividade e compromisso em cada ponto.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#quem-somos">Quem Somos</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#orcamento">Orçamento</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Serviços</h3>
+                    <ul class="footer-links">
+                        <li><a href="#servicos">Bordados em Kimonos</a></li>
+                        <li><a href="#servicos">Bordados Promocionais</a></li>
+                        <li><a href="#servicos">Chaveiros Personalizados</a></li>
+                        <li><a href="#servicos">Plaquetas Metálicas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone-alt"></i> (11) 94011-0722</li>
+                        <li><i class="fas fa-envelope"></i> contato@jobelly.com.br</li>
+                        <li><i class="fas fa-map-marker-alt"></i> São Paulo - SP</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Jobelly Bordados - Todos os direitos reservados. | Desenvolvido com paixão por bordados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== MENU MOBILE =====
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainMenu = document.getElementById('mainMenu');
+        const logoImg = document.getElementById('logoImg');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // ===== HEADER SCROLL EFFECT =====
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+                logoImg.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+                logoImg.classList.remove('scrolled');
+            }
+            
+            // Ativar link do menu conforme scroll
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // ===== ANIMAÇÃO AO SCROLL =====
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        
+        const animateOnScroll = () => {
+            animateElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        
+        // Verificar animação ao carregar e ao scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // ===== CONTADORES ANIMADOS =====
+        const statNumbers = document.querySelectorAll('.stat-number');
+        let animated = false;
+        
+        const animateStats = () => {
+            if (animated) return;
+            
+            const sectionTop = document.querySelector('.hero').getBoundingClientRect().top;
+            if (sectionTop < window.innerHeight - 100) {
+                statNumbers.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-count'));
+                    const increment = target / 100;
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            stat.textContent = target + (stat.getAttribute('data-count') === '7' ? '+' : '+');
+                            clearInterval(timer);
+                        } else {
+                            stat.textContent = Math.floor(current);
+                        }
+                    }, 20);
+                });
+                
+                animated = true;
+            }
+        };
+        
+        window.addEventListener('scroll', animateStats);
+        
+        // ===== FILTRO PORTFÓLIO =====
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+               // Remover active de todos os botões
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Adicionar active ao botão clicado
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        // ===== FORMULÁRIO DE ORÇAMENTO =====
+        document.getElementById('budgetForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            const description = document.getElementById('description').value;
+            
+            // Formatar mensagem para WhatsApp
+            const message = `*SOLICITAÇÃO DE ORÇAMENTO - JOBELLY BORDADOS*%0A%0A` +
+                           `*Nome:* ${name}%0A` +
+                           `*Telefone:* ${phone}%0A` +
+                           `*E-mail:* ${email}%0A` +
+                           `*Serviço de Interesse:* ${service}%0A` +
+                           `*Descrição do Projeto:*%0A${description}%0A%0A` +
+                           `_Esta mensagem foi enviada através do site_`;
+            
+            // Redirecionar para WhatsApp
+            window.open(`https://wa.me/5511940110722?text=${message}`, '_blank');
+            
+            // Limpar formulário
+            this.reset();
+            
+            // Mostrar mensagem de sucesso
+            alert('Você será redirecionado para o WhatsApp para finalizar a solicitação do orçamento!');
+        });
+        
+        // ===== FORMULÁRIO DE CONTATO =====
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simular envio do formulário
+            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            
+            // Limpar formulário
+            this.reset();
+        });
+        
+        // ===== ANIMAÇÃO INICIAL =====
+        // Adicionar classe visible aos elementos do hero
+        setTimeout(() => {
+            document.querySelector('.hero-content').classList.add('visible');
+        }, 300);
+    </script>
+</body>
+</html>
+               

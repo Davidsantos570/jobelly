@@ -1,0 +1,234 @@
+/* ===== ORÇAMENTO SECTION ===== */
+.budget {
+    background-color: var(--preto);
+    color: var(--branco);
+    position: relative;
+    overflow: hidden;
+}
+
+.budget::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--vermelho);
+}
+
+.budget .section-title h2 {
+    color: var(--branco);
+}
+
+.budget-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.budget-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--branco);
+}
+
+.budget-text p {
+    margin-bottom: 30px;
+    color: var(--cinza);
+}
+
+.budget-features {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.budget-feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.budget-feature i {
+    color: var(--vermelho);
+    font-size: 1.2rem;
+}
+
+.budget-form {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--branco);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--branco);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+/* ESTILOS ESPECÍFICOS PARA O SELECT (CORRIGIDO) */
+/* ===== ORÇAMENTO SECTION - SELECT COM ALTO CONTRASTE ===== */
+
+/* ESTILO DO SELECT COM FUNDO CLARO E TEXTO ESCURO */
+.budget-form select {
+    width: 100%;
+    padding: 15px 45px 15px 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    cursor: pointer;
+    
+    /* Remove aparência padrão */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    /* Seta personalizada em cinza escuro */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 20px;
+}
+
+/* Opções do select - fundo branco, texto preto */
+.budget-form select option {
+    background-color: white;
+    color: #333;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+/* Estados do select */
+.budget-form select:focus {
+    outline: none;
+    border-color: var(--vermelho);
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.2);
+}
+
+.budget-form select:hover {
+    background-color: white;
+    border-color: #bbb;
+}
+
+/* Para navegadores Firefox */
+@-moz-document url-prefix() {
+    .budget-form select {
+        color: #333;
+        background-color: #f8f8f8;
+    }
+    
+    .budget-form select option {
+        background-color: white;
+        color: #333;
+    }
+}
+
+/* Para Internet Explorer/Edge */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .budget-form select {
+        padding: 12px;
+        background-color: #333;
+    }
+    
+    .budget-form select option {
+        background-color: #333;
+        color: var(--branco);
+    }
+}
+
+/* FIM DOS ESTILOS DO SELECT */
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--vermelho);
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    background-color: var(--vermelho);
+    color: var(--branco);
+    border: none;
+    padding: 16px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background-color: var(--vermelho-escuro);
+}
+
+/* Responsividade para a seção de orçamento */
+@media (max-width: 992px) {
+    .budget-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .budget-form {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .budget-form {
+        padding: 25px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .budget-form select {
+        padding: 12px 40px 12px 15px;
+        background-size: 18px;
+    }
+}
+
+
